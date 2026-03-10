@@ -180,3 +180,47 @@ if __name__ == '__main__':
     solution_prim = analyzer_prim.solve_system()
     print("\nSolution (x'):")
     print(solution_prim)
+
+    print("\n--- Matrix Inverses ---")
+
+    A_inv = np.linalg.inv(A)
+    A_prim_inv = np.linalg.inv(A_prim)
+
+    print("A^-1:")
+    print(A_inv)
+
+    print("\nA'_inv:")
+    print(A_prim_inv)
+
+
+    print("\n--- Eigenvalues ---")
+
+    eig_A = np.linalg.eigvals(A)
+    eig_A_prim = np.linalg.eigvals(A_prim)
+
+    print("Eigenvalues of A:")
+    print(eig_A)
+
+    print("\nEigenvalues of A':")
+    print(eig_A_prim)
+
+
+    print("\n--- Matrix Norms ---")
+
+    matrices = {
+        "A": A,
+        "A'": A_prim,
+        "A^-1": A_inv,
+        "A'^-1": A_prim_inv
+    }
+
+    for name, M in matrices.items():
+        print(f"\nMatrix {name}")
+
+        norm1 = np.linalg.norm(M, 1)
+        norm2 = np.linalg.norm(M, 2)
+        norm_inf = np.linalg.norm(M, np.inf)
+
+        print("1-Norm:", norm1)
+        print("2-Norm:", norm2)
+        print("Infinity-Norm:", norm_inf)
