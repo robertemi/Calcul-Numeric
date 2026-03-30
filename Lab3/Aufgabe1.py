@@ -104,7 +104,8 @@ class NewtonOptimization:
         plt.grid(True, alpha=0.3)
 
         if show:
-            plt.show()
+            plt.savefig('contour-plot.png', dpi=300)
+            # plt.show()
 
     def plot_path_on_contour(self, func_name, path, x1_range, x2_range, levels=30, show=True):
         func, _, _, target = self._get_components(func_name)
@@ -132,8 +133,8 @@ class NewtonOptimization:
         plt.grid(True, alpha=0.3)
 
         if show:
-            plt.show()
-
+            # plt.show()
+            plt.savefig('newton-path-on-contour-plot.png', dpi=300)
     # =========================
     # Part c) General Newton method
     # =========================
@@ -257,7 +258,8 @@ class NewtonOptimization:
         plt.grid(True, alpha=0.3)
 
         if show:
-            plt.show()
+            # plt.show()
+            plt.savefig('newton-path-on-contour2.png', dpi=300)
 
     # =========================
     # Output for part a)
